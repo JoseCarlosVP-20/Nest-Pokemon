@@ -4,14 +4,14 @@ services:
   pokedexapp:
     depends_on:
       - db
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
     image: pokedex-docker
     container_name: pokedexapp
     restart: always # reiniciar el contenedor si se detiene
     ports:
-      - "${PORT}:${PORT}"
+      - '${PORT}:${PORT}'
     # working_dir: /var/www/pokedex
     environment:
       MONGODB: ${MONGODB}
